@@ -1,0 +1,11 @@
+{
+  "name": "twitter-ingestion",
+  "version": "1.0.0",
+  "description": "For CAB432",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cian - n9727442",
+  "license": "ISC"
+}

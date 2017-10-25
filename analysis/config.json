@@ -1,0 +1,10 @@
+{
+  "database": {
+    "username": "cool37132",
+    "password": "TosRNmM06H5z",
+    "database": "cab432",
+    "host": "cab432.cjf6k4izso4a.ap-southeast-2.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}

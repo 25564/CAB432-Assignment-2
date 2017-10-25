@@ -9,6 +9,8 @@
   "author": "Cian - n9727442",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
     "twitter": "^1.7.1"
   }
 }

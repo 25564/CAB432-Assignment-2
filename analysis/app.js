@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 
 const sentiment = require('sentiment');
 const models = require('./models');
+const WordPOS = require('wordpos');
+
 models.sequelize.sync({ force: false })
   .then(() => {
     console.log('Database Synchronised Successfully!');
@@ -20,12 +22,31 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'pug');
 
+const getNouns = text => {
+  const wordpos = new WordPOS();
+  
+  return new Promise(resolve => {
+    wordpos.getNouns(text, function(result){
+      resolve(result);
+    });
+  });
+}
+
 app.post('/', (req, res) => {
   const tweet = {};
+
   tweet.text = req.body.tweet;
   tweet.sentiment = sentiment(tweet.text);
 
-  models.Tweet.create({ tweet: tweet.text, sentiment: tweet.sentiment.score }).then(ReturnData => {
+  getNouns(tweet.text).then(nouns => 
+    Promise.all([
+      models.Tweet.create({ tweet: tweet.text, sentiment: tweet.sentiment.score }),
+      models.Noun.bulkCreate(nouns.map(noun => ({
+        noun,
+        sentiment: tweet.sentiment.score,
+      })))
+    ])
+  ).then(ReturnData => {
     res.json({
       success: true,
       entry: ReturnData,

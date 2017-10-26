@@ -8,6 +8,7 @@ const sequelize = new Sequelize(config);
 const models = {};
 const modules = [
   require('./tweet'),
+  require('./noun'),
 ];
 
 // Initialize Models

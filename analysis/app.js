@@ -42,7 +42,7 @@ app.post('/', (req, res) => {
     Promise.all([
       models.Tweet.create({ tweet: tweet.text, sentiment: tweet.sentiment.score }),
       models.Noun.bulkCreate(nouns.map(noun => ({
-        noun,
+        noun: noun.toLowerCase(),
         sentiment: tweet.sentiment.score,
       })))
     ])

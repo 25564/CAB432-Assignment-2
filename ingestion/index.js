@@ -11,12 +11,14 @@ const client = new Twitter({
   access_token_secret: 'puTPcI2yWKtWdT9It5Sa66N2IRqqf72XlNb1I2szrW6JB',
 });
 
-const stream = client.stream('statuses/filter', { track: 'javascript, programming, computer' });
+const stream = client.stream('statuses/filter', {
+    track: 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z',
+});
 
 stream.on('data', tweetData => {
     const RequestOptions = {
         method: 'POST',
-        uri: 'http://localhost:3000',
+        uri: 'http://ec2-54-206-41-143.ap-southeast-2.compute.amazonaws.com:3000',
         body: {
             tweet: tweetData.text,
         },

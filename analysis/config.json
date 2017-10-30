@@ -5,6 +5,13 @@
     "database": "cab432",
     "host": "cab432.cjf6k4izso4a.ap-southeast-2.rds.amazonaws.com",
     "port": 5432,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 40000,
+      "acquire": 40000
+    }
   }
 }

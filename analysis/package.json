@@ -10,7 +10,7 @@
     "pg-hstore": "^2.3.2",
     "pug": "^2.0.0-rc.4",
     "sentiment": "^4.1.0",
-    "sequelize": "^3.24.6",
+    "sequelize": "^4.19.0",
     "wordpos": "^1.1.5"
   }
 }

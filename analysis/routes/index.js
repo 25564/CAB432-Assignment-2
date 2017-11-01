@@ -21,18 +21,18 @@ const getNouns = text => {
 
 router.get('/data', (req, res) => {
   Promise.all([
-    sequelize.query('SELECT noun, AVG(sentiment), COUNT(sentiment), (AVG(sentiment)*(LOG(COUNT(sentiment)))) as Weighted'
-                  + 'FROM "Nouns" as nountable WHERE "createdAt" >= NOW() - INTERVAL \'5 minutes\' AND noun NOT IN (SELECT word FROM "BannedWords")'
+    sequelize.query('SELECT noun, AVG(sentiment), COUNT(sentiment), (AVG(sentiment)*(LOG(COUNT(sentiment)))) as Weighted '
+                  + 'FROM "Nouns" as nountable WHERE "createdAt" >= NOW() - INTERVAL \'5 minutes\' AND noun NOT IN (SELECT word FROM "BannedWords") '
                   + 'GROUP BY noun ORDER by Weighted DESC LIMIT 25', { 
       type: sequelize.QueryTypes.SELECT 
     }),
-    sequelize.query('SELECT noun, AVG(sentiment), COUNT(sentiment), (AVG(sentiment)*(LOG(COUNT(sentiment)))) as Weighted'
-                  + 'FROM "Nouns" as nountable WHERE "createdAt" >= NOW() - INTERVAL \'5 minutes\' AND noun NOT IN (SELECT word FROM "BannedWords")'
+    sequelize.query('SELECT noun, AVG(sentiment), COUNT(sentiment), (AVG(sentiment)*(LOG(COUNT(sentiment)))) as Weighted '
+                  + 'FROM "Nouns" as nountable WHERE "createdAt" >= NOW() - INTERVAL \'5 minutes\' AND noun NOT IN (SELECT word FROM "BannedWords") '
                   + 'GROUP BY noun ORDER by Weighted ASC LIMIT 25', { 
               type: sequelize.QueryTypes.SELECT 
               }),
   ])
-  .then(data => res.json(data));
+  .then(data => res.json(data)).catch(err => console.log(err));
 });
 
 

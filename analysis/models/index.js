@@ -9,6 +9,7 @@ const models = {};
 const modules = [
   require('./tweet'),
   require('./noun'),
+  require('./bannedwords'),  
 ];
 
 // Initialize Models

@@ -18,6 +18,7 @@ body {
 .WordSectionWrapper {
     padding: 25px;
     margin-top: 50px;
+    margin-bottom: 30px;
     background: #fff;
     border-radius: 5px;
 }
@@ -51,4 +52,9 @@ body {
     font-weight: 400;
     color: #222;
     display: inline;
+}
+
+.bottomText {
+    color: #fff;
+    text-align: center;
 }

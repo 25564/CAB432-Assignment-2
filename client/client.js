@@ -4,10 +4,15 @@ function initialise() {
 }
 
 function DisplayResults (Results) {      
-    console.log(Results)
-//     document.getElementById('SortedRegionsList').innerHTML = Results.slice(0, 5).map(function(Region) {
-//     return `<li>${Region.zoneID}</li>`;
-//     }).join('');
+    console.log(Results);
+
+    document.getElementById('PositiveWordList').innerHTML = Results[0].map(function(Word) {
+        return `<li><p>${Word.noun}</p></li>`;
+    }).join('');
+
+    document.getElementById('NegativeWordList').innerHTML = Results[1].map(function(Word) {
+        return `<li><p>${Word.noun}</p></li>`;
+    }).join('');
 }
 
 function RetrieveData() {

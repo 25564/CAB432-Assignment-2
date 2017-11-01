@@ -1,0 +1,35 @@
+<html>
+    <header>  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">  
+        <link rel="stylesheet" href="styles.css">
+        <script src="client.js"></script>        
+    </header>
+    <body onload="initialise()">
+        <div class="container">
+            <img src="logo.png" class="pageLogoTop" alt="twitter logo">
+            <h1 class="pageTitle">Twitter's Mood</h1>
+            <div class="row">
+                <div class="col-6">
+                    <div class="WordSectionWrapper">
+                        <h5><span class="positive">Positive</span> Words</h5>
+                          <ol id="PositiveWordList">
+                            <li>
+                                <p>Puppy</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="WordSectionWrapper">
+                        <h5><span class="negative">Negative</span> Words</h5>
+                        <ol id="NegativeWordList">
+                            <li>
+                                <p>Puppy</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

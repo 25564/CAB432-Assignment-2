@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const models = require('./models');
 
@@ -17,6 +18,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.set('view engine', 'pug');
 
 app.use('/', require('./routes'));

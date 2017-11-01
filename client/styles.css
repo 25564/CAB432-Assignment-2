@@ -1,0 +1,54 @@
+body {
+    background:#5ea9dd;
+}
+
+.pageLogoTop {
+    display: block;
+    width: 150px;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+}
+
+.pageTitle {
+    color: #eee;
+    text-align: center;
+}
+
+.WordSectionWrapper {
+    padding: 25px;
+    margin-top: 50px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.WordSectionWrapper h5  {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.WordSectionWrapper h5 .positive {
+    color: rgb(55, 201, 128);
+}
+
+.WordSectionWrapper h5 .negative {
+    color: rgb(224, 79, 79);
+}
+
+.WordSectionWrapper ol {
+    text-align: center;
+    list-style-position: inside;
+    padding: 0;
+}
+
+.WordSectionWrapper ol li {
+    font-weight: bold;
+    color: #333;
+    padding: 5px;
+}
+
+.WordSectionWrapper ol li p {
+    font-weight: 400;
+    color: #222;
+    display: inline;
+}
